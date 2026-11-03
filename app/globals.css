@@ -127,3 +127,8 @@
     @apply font-sans;
     }
 }
+
+html.cursor-hidden,
+html.cursor-hidden * {
+  cursor: none !important;
+}

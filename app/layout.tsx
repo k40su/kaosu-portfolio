@@ -1,15 +1,27 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
 import "./globals.css"
+import { MotionProvider } from "@/components/site/motion-provider"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+export const metadata: Metadata = {
+  metadataBase: new URL("https://kaosu.dev"),
+  title: "Ryder | Full-Stack Developer",
+  description:
+    "Portfolio of Ryder (kaosu), a full-stack developer building for the web with a growing focus on security.",
+  openGraph: {
+    title: "Ryder | Full-Stack Developer",
+    description:
+      "Portfolio of Ryder (kaosu), a full-stack developer building for the web with a growing focus on security.",
+    url: "/",
+    siteName: "kaosu.dev",
+    type: "website",
+  },
+}
 
 export default function RootLayout({
   children,
@@ -20,10 +32,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      data-scroll-behavior="smooth"
+      className={cn("scroll-smooth antialiased", "font-sans", inter.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <MotionProvider>{children}</MotionProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
