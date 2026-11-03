@@ -10,13 +10,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kaosu.dev"),
-  title: "Ryder | Full-Stack Developer",
+  title: "Ryder Jennewine",
   description:
     "Portfolio of Ryder (kaosu), a full-stack developer building for the web with a growing focus on security.",
   openGraph: {
-    title: "Ryder | Full-Stack Developer",
+    title: "Ryder Jennewine",
     description:
-      "Portfolio of Ryder (kaosu), a full-stack developer building for the web with a growing focus on security.",
+      "Portfolio of Ryder Jennewine (kaosu), a full-stack developer building for the web with a growing focus on security.",
     url: "/",
     siteName: "kaosu.dev",
     type: "website",
